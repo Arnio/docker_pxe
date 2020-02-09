@@ -1,0 +1,16 @@
+PROMPT 0
+UI vesamenu.c32
+MENU BACKGROUND background.jpg
+MENU TITLE Windows
+
+LABEL <- Main Menu
+      KERNEL vesamenu.c32
+      APPEND pxelinux.cfg/default
+
+LABEL W2K16_x64 & W2K12_x64_R2 (menu inside)
+	kernel Boot/pxeboot.0
+
+
+LABEL <- Main Menu
+      KERNEL vesamenu.c32
+      APPEND pxelinux.cfg/default

@@ -1,0 +1,37 @@
+PROMPT 0
+UI vesamenu.c32
+MENU BACKGROUND background.jpg
+MENU TITLE Linux
+
+LABEL <- Main Menu
+      KERNEL vesamenu.c32
+      APPEND pxelinux.cfg/default
+
+LABEL Debian-10-x64
+        kernel debian/10/linux
+        append initrd=debian/10/initrd.gz
+
+LABEL Debian-9-x64
+        kernel debian9/linux
+        append initrd=debian/9/initrd.gz
+
+LABEL Ubuntu-18.04-x64
+        kernel ubuntu/18.04/linux
+        append initrd=ubuntu/18.04/initrd.gz expert dmraid=true
+      
+LABEL Ubuntu-16.04-x64
+        kernel ubuntu/16.04/linux
+        append initrd=ubuntu/16.04/initrd.gz expert dmraid=true
+
+LABEL CentOS-7-x64
+        kernel centos/7/vmlinuz
+        append initrd=centos/7/initrd.img method=http://mirror.mirohost.net/centos/7/os/x86_64/ devfs=nomount ksdevice=link ramdisk_size=100000
+
+LABEL CentOS-6-x64
+        kernel centos/6/vmlinuz
+        append initrd=centos/6/initrd.img method=http://mirror.mirohost.net/centos/6/os/x86_64/ devfs=nomount ksdevice=link ramdisk_size=100000
+
+
+LABEL <- Main Menu
+      KERNEL vesamenu.c32
+      APPEND pxelinux.cfg/default

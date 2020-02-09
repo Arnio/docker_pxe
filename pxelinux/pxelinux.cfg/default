@@ -1,0 +1,21 @@
+ui vesamenu.c32                  
+PROMPT 0
+menu background background.jpg
+menu title PXE boot menu
+
+LABEL bootlocal
+   menu label Boot from first HDD
+   kernel chain.c32
+   append hd0 0
+   timeout 120
+ TEXT HELP
+The system will boot after time is up.
+ ENDTEXT
+
+LABEL Linux             ->
+      KERNEL vesamenu.c32
+      APPEND pxelinux.cfg/linux    
+
+LABEL Windows           ->
+      KERNEL vesamenu.c32
+      APPEND pxelinux.cfg/windows 
