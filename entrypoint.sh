@@ -1,6 +1,6 @@
 #! /bin/sh -e
 
-# created 27 sep 2017 by richb
+
 #  Populates dhcpd.conf and defaults in /etc/dhcpd.d & /etc/dnsmasq.d
 #  Starts dhcpd (optionally) and dnsmasq
 
